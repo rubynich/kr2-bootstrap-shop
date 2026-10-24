@@ -1,16 +1,73 @@
+/* Минимальные доработки поверх Bootstrap. Подключается после bootstrap.min.css */
+
 body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.placeholder-box {
-  min-height: 240px;
+/* Основное содержимое занимает свободное место, подвал прижат к низу экрана */
+main {
+  flex: 1 0 auto;
 }
 
-.placeholder-image {
-  min-height: 320px;
+footer {
+  flex-shrink: 0;
 }
 
-.card-img-top {
-  height: 180px;
-  object-fit: cover;
+/* Фото товара в карточке каталога: целиком, без обрезки */
+.card-img-top.product-img {
+  height: 200px;
+  object-fit: contain;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+/* Слайды карусели на главной */
+.carousel-img {
+  height: 300px;
+  object-fit: contain;
+}
+
+/* Стрелки карусели: тёмный круг с белой иконкой, виден на любом фото */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(33, 37, 41, 0.75);
+  background-size: 50%;
+  border-radius: 50%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 1;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #212529;
+}
+
+.carousel-indicators-bottom {
+  position: static;
+  margin: 0 0 0.5rem;
+}
+
+/* Крупное фото на странице товара */
+.product-page-img {
+  max-height: 420px;
+  object-fit: contain;
+}
+
+/* Миниатюра в блоке «Другие товары» */
+.other-img {
+  max-height: 96px;
+  object-fit: contain;
+  padding: 0.5rem;
+}
+
+/* Заметный фокус для навигации с клавиатуры */
+:focus-visible {
+  outline: 3px solid #0d6efd;
+  outline-offset: 2px;
 }

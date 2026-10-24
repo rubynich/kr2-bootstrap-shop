@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Контактная информация учебного интернет-магазина и форма обратной связи.">
+  <title>Контакты — Bootstrap Shop</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-light">
+  <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Основная навигация">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Bootstrap Shop</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Переключить навигацию"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product.html">Товар</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="order.html">Заявка</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="contacts.html">Контакты</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Дополнительно
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
+              <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
+              <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
+              <li><a class="dropdown-item" href="contacts.html">Контакты</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container my-5">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Контакты</li>
+      </ol>
+    </nav>
+
+    <h1 class="h2 mb-4">Контакты</h1>
+
+    <div class="row g-4">
+      <div class="col-12 col-lg-5">
+        <ul class="list-group shadow-sm">
+          <li class="list-group-item"><strong>Телефон:</strong> +7 (900) 000-00-00</li>
+          <li class="list-group-item"><strong>E-mail:</strong> info@example.com</li>
+          <li class="list-group-item"><strong>Адрес:</strong> г. Москва, учебный проект</li>
+          <li class="list-group-item"><strong>Режим работы:</strong> по будням, 10:00–18:00</li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Обратная связь</h2>
+            <form id="contact-form" class="needs-validation" action="#" method="post" novalidate>
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="contact-name" class="form-label">Имя *</label>
+                  <input id="contact-name" name="name" type="text" class="form-control" minlength="2" autocomplete="given-name" required>
+                  <div class="invalid-feedback">Введите имя (минимум 2 символа).</div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="contact-email" class="form-label">E-mail *</label>
+                  <input id="contact-email" name="email" type="email" class="form-control" autocomplete="email" required>
+                  <div class="invalid-feedback">Введите корректный e-mail.</div>
+                </div>
+                <div class="col-12">
+                  <label for="contact-message" class="form-label">Сообщение *</label>
+                  <textarea id="contact-message" name="message" class="form-control" rows="4" required></textarea>
+                  <div class="invalid-feedback">Напишите сообщение.</div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input id="contact-agree" name="agreement" class="form-check-input" type="checkbox" required>
+                    <label class="form-check-label" for="contact-agree">Я согласен на обработку данных *</label>
+                    <div class="invalid-feedback">Необходимо согласие на обработку данных.</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit">Отправить</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-12 col-md-6">
+          <p class="mb-1">&copy; 2026 Bootstrap Shop. Учебный проект.</p>
+          <p class="mb-0 small">Тел.: +7 (900) 000-00-00, e-mail: info@example.com</p>
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <a class="text-white me-3" href="catalog.html">Каталог</a>
+          <a class="text-white me-3" href="order.html">Заявка</a>
+          <a class="text-white" href="contacts.html">Контакты</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Уведомление об успешной отправке -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="successToast" class="toast text-bg-success" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">Заявка отправлена. Менеджер свяжется с вами.</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

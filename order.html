@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Форма заявки учебного интернет-магазина: имя, e-mail, телефон, выбор товара и комментарий.">
   <title>Заявка — Bootstrap Shop</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="bg-light">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Основная навигация">
     <div class="container">
       <a class="navbar-brand" href="index.html">Bootstrap Shop</a>
       <button
@@ -27,41 +26,52 @@
       </button>
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Главная</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="catalog.html">Каталог</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="product.html">Товар</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="order.html">Заявка</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Дополнительно
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
-            <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
-            <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
-          </ul>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product.html">Товар</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="order.html">Заявка</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacts.html">Контакты</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Дополнительно
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
+              <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
+              <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
+              <li><a class="dropdown-item" href="contacts.html">Контакты</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <main class="container my-5">
-    <div class="row justify-content-center">
+  <main id="main" class="container my-5">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Заявка</li>
+      </ol>
+    </nav>
+
+    <div class="row g-4">
       <div class="col-12 col-lg-8">
         <div class="card shadow-sm">
           <div class="card-header bg-primary text-white">
@@ -71,56 +81,86 @@
             <div class="alert alert-info" role="alert">
               Заполните форму. Поля со звёздочкой являются обязательными.
             </div>
-            <form>
+            <form id="order-form" class="needs-validation" action="#" method="post" novalidate>
               <div class="row g-3">
                 <div class="col-12 col-md-6">
                   <label for="order-name" class="form-label">Имя *</label>
-                  <input id="order-name" name="name" type="text" class="form-control" required>
+                  <input id="order-name" name="name" type="text" class="form-control" minlength="2" autocomplete="given-name" required>
+                  <div class="invalid-feedback">Введите имя (минимум 2 символа).</div>
                 </div>
                 <div class="col-12 col-md-6">
                   <label for="order-email" class="form-label">E-mail *</label>
-                  <input id="order-email" name="email" type="email" class="form-control" required>
+                  <input id="order-email" name="email" type="email" class="form-control" placeholder="example@mail.ru" autocomplete="email" required>
+                  <div class="invalid-feedback">Введите корректный e-mail, например example@mail.ru.</div>
                 </div>
                 <div class="col-12 col-md-6">
-                  <label for="order-phone" class="form-label">Телефон</label>
+                  <label for="order-phone" class="form-label">Телефон *</label>
                   <div class="input-group">
                     <span class="input-group-text">+7</span>
-                    <input id="order-phone" name="phone" type="tel" class="form-control" placeholder="900 000-00-00">
+                    <input id="order-phone" name="phone" type="tel" class="form-control" placeholder="900 000-00-00"
+                      pattern="\d{3} \d{3}-\d{2}-\d{2}" autocomplete="tel-national" required>
+                    <div class="invalid-feedback">Формат: 900 000-00-00.</div>
                   </div>
                 </div>
                 <div class="col-12 col-md-6">
                   <label for="order-product" class="form-label">Товар</label>
                   <select id="order-product" name="product" class="form-select">
-                    <option selected>Выберите товар</option>
-                    <option value="product-1">Товар 1</option>
-                    <option value="product-2">Товар 2</option>
-                    <option value="product-3">Товар 3</option>
+                    <option value="" selected>Не выбран</option>
+                    <option value="1">Клавиатура с RGB-подсветкой</option>
+                    <option value="2">Игровая мышь PRO X2</option>
+                    <option value="3">Игровая гарнитура с RGB</option>
+                    <option value="4">Белая гарнитура с микрофоном</option>
+                    <option value="5">Игровая клавиатура, красная подсветка</option>
+                    <option value="6">Игровая мышь сиреневая</option>
                   </select>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="order-topic" class="form-label">Тема заявки *</label>
+                  <select id="order-topic" name="topic" class="form-select" required>
+                    <option value="" selected>Выберите тему</option>
+                    <option value="product">Заказ товара</option>
+                    <option value="consultation">Консультация</option>
+                    <option value="delivery">Доставка</option>
+                  </select>
+                  <div class="invalid-feedback">Выберите тему заявки.</div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="order-date" class="form-label">Дата связи</label>
+                  <input id="order-date" name="date" type="date" class="form-control">
                 </div>
                 <div class="col-12">
                   <label for="order-comment" class="form-label">Комментарий</label>
-                  <textarea id="order-comment" name="comment" class="form-control" rows="4"></textarea>
+                  <textarea id="order-comment" name="comment" class="form-control" rows="4" placeholder="Укажите дополнительную информацию"></textarea>
                 </div>
                 <div class="col-12">
                   <div class="form-check">
-                    <input id="order-agree" class="form-check-input" type="checkbox" required>
-                    <label class="form-check-label" for="order-agree">
-                      Я согласен на обработку данных *
-                    </label>
+                    <input id="order-agree" name="agreement" class="form-check-input" type="checkbox" required>
+                    <label class="form-check-label" for="order-agree">Я согласен на обработку данных *</label>
+                    <div class="invalid-feedback">Необходимо согласие на обработку данных.</div>
                   </div>
                 </div>
-                <div class="col-12 d-flex gap-2">
-                  <button class="btn btn-primary" type="submit">
-                    Отправить заявку
-                  </button>
-                  <button class="btn btn-outline-secondary" type="reset">
-                    Очистить
-                  </button>
+                <div class="col-12 d-flex flex-wrap gap-2">
+                  <button class="btn btn-primary" type="submit">Отправить заявку</button>
+                  <button class="btn btn-outline-secondary" type="reset">Очистить</button>
                 </div>
               </div>
             </form>
           </div>
         </div>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <aside class="card shadow-sm" aria-labelledby="steps-title">
+          <div class="card-body">
+            <h2 class="h5" id="steps-title">Как это работает</h2>
+            <ol class="ps-3 mb-3">
+              <li>Вы заполняете форму.</li>
+              <li>Менеджер проверяет заявку.</li>
+              <li>Мы связываемся с вами в выбранную дату.</li>
+            </ol>
+            <p class="mb-0">Остались вопросы? Загляните в <a href="contacts.html">контакты</a>.</p>
+          </div>
+        </aside>
       </div>
     </div>
   </main>
@@ -129,23 +169,29 @@
     <div class="container">
       <div class="row align-items-center g-3">
         <div class="col-12 col-md-6">
-          <p class="mb-0">
-            &copy; 2026 Bootstrap Shop. Учебный проект.
-          </p>
+          <p class="mb-1">&copy; 2026 Bootstrap Shop. Учебный проект.</p>
+          <p class="mb-0 small">Тел.: +7 (900) 000-00-00, e-mail: info@example.com</p>
         </div>
         <div class="col-12 col-md-6 text-md-end">
-          <a class="text-white text-decoration-none me-3" href="catalog.html">
-            Каталог
-          </a>
-          <a class="text-white text-decoration-none" href="order.html">
-            Заявка
-          </a>
+          <a class="text-white me-3" href="catalog.html">Каталог</a>
+          <a class="text-white me-3" href="order.html">Заявка</a>
+          <a class="text-white" href="contacts.html">Контакты</a>
         </div>
       </div>
     </div>
   </footer>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-  </script>
+
+  <!-- Уведомление об успешной отправке -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="successToast" class="toast text-bg-success" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">Заявка отправлена. Менеджер свяжется с вами.</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
