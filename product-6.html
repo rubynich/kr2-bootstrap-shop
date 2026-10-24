@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Карточка товара «Игровая мышь сиреневая»: фото, описание, цена, характеристики и заявка.">
+  <title>Игровая мышь сиреневая — Bootstrap Shop</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-light">
+  <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Основная навигация">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Bootstrap Shop</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Переключить навигацию"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="product.html">Товар</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="order.html">Заявка</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacts.html">Контакты</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Дополнительно
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
+              <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
+              <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
+              <li><a class="dropdown-item" href="contacts.html">Контакты</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container my-5">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item"><a href="catalog.html">Каталог</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Игровая мышь сиреневая</li>
+      </ol>
+    </nav>
+
+    <div class="row g-4">
+      <div class="col-12 col-lg-6">
+        <div class="card shadow-sm h-100">
+          <div class="card-body d-flex align-items-center justify-content-center bg-white rounded p-4">
+            <img src="images/product-6.png" class="img-fluid product-page-img" alt="Сиреневая проводная игровая мышь с RGB-подсветкой" width="600" height="800">
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        
+        <h1 class="h2">Игровая мышь сиреневая</h1>
+        <p class="lead text-muted">Сиреневая проводная игровая мышь с RGB-подсветкой и боковыми кнопками.</p>
+        <p class="fs-3 fw-bold mb-1">1500 руб.</p>
+        <p class="text-success-emphasis fw-semibold mb-3">В наличии</p>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <a class="btn btn-primary btn-lg" href="order.html?product=6">Оформить заявку</a>
+          <a class="btn btn-outline-secondary btn-lg" href="catalog.html">Назад в каталог</a>
+        </div>
+        <div class="alert alert-warning" role="alert">
+          Это учебная карточка товара. Данные используются для демонстрации Bootstrap-компонентов.
+        </div>
+      </div>
+    </div>
+
+    <!-- Вкладки: характеристики и доставка -->
+    <section class="mt-5" aria-label="Информация о товаре">
+      <ul class="nav nav-tabs" id="productTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs"
+            type="button" role="tab" aria-controls="specs" aria-selected="true">Характеристики</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="delivery-tab" data-bs-toggle="tab" data-bs-target="#delivery"
+            type="button" role="tab" aria-controls="delivery" aria-selected="false">Доставка и оплата</button>
+        </li>
+      </ul>
+      <div class="tab-content bg-white border border-top-0 rounded-bottom p-3">
+        <div class="tab-pane fade show active" id="specs" role="tabpanel" aria-labelledby="specs-tab" tabindex="0">
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered align-middle mb-0">
+              <caption class="visually-hidden">Характеристики товара «Игровая мышь сиреневая»</caption>
+              <tbody>
+            <tr><th scope="row">Категория</th><td>Мыши</td></tr>
+            <tr><th scope="row">Артикул</th><td>MS-006</td></tr>
+            <tr><th scope="row">Подключение</th><td>Проводное</td></tr>
+            <tr><th scope="row">Подсветка</th><td>RGB</td></tr>
+            <tr><th scope="row">Цвет</th><td>Сиреневый</td></tr>
+            <tr><th scope="row">Гарантия</th><td>12 месяцев</td></tr>
+            <tr><th scope="row">Цена</th><td>1500 руб.</td></tr>
+            <tr><th scope="row">Наличие</th><td>В наличии</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="delivery" role="tabpanel" aria-labelledby="delivery-tab" tabindex="0">
+          <ul class="mb-0">
+            <li>Самовывоз — бесплатно.</li>
+            <li>Курьерская доставка — по договорённости.</li>
+            <li>Оплата при получении или по счёту.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Частые вопросы -->
+    <section class="mt-5" aria-labelledby="faq-title">
+      <h2 class="h4 mb-3" id="faq-title">Частые вопросы</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
+              Можно ли оформить заявку без регистрации?
+            </button>
+          </h3>
+          <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Да, в учебном проекте заявка оформляется без регистрации.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+              Что происходит после отправки заявки?
+            </button>
+          </h3>
+          <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Менеджер проверяет заявку и связывается с вами в выбранную дату.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+              Есть ли гарантия на товар?
+            </button>
+          </h3>
+          <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Да, гарантия на товар — 12 месяцев.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Другие товары -->
+    <section class="mt-5" aria-labelledby="other-title">
+      <h2 class="h4 mb-3" id="other-title">Другие товары</h2>
+      <div class="row g-3">
+      <div class="col-12 col-md-6 col-lg-4">
+        <a class="card h-100 text-decoration-none text-body shadow-sm" href="product.html">
+          <div class="row g-0 align-items-center h-100">
+            <div class="col-4">
+              <img src="images/product-1.png" class="img-fluid other-img" alt="Клавиатура с цифровым блоком, чёрно-бежево-жёлтые клавиши, RGB-подсветка" width="760" height="428" loading="lazy">
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h3 class="card-title h6 mb-1">Клавиатура с RGB-подсветкой</h3>
+                <p class="card-text fw-bold mb-0">4500 руб.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <a class="card h-100 text-decoration-none text-body shadow-sm" href="product-2.html">
+          <div class="row g-0 align-items-center h-100">
+            <div class="col-4">
+              <img src="images/product-2.png" class="img-fluid other-img" alt="Белая игровая мышь PRO X2 с чёрной верхней панелью, вид сверху" width="779" height="800" loading="lazy">
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h3 class="card-title h6 mb-1">Игровая мышь PRO X2</h3>
+                <p class="card-text fw-bold mb-0">11900 руб.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <a class="card h-100 text-decoration-none text-body shadow-sm" href="product-3.html">
+          <div class="row g-0 align-items-center h-100">
+            <div class="col-4">
+              <img src="images/product-3.png" class="img-fluid other-img" alt="Белая игровая гарнитура с RGB-кольцом на чашке и микрофоном" width="307" height="320" loading="lazy">
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h3 class="card-title h6 mb-1">Игровая гарнитура с RGB</h3>
+                <p class="card-text fw-bold mb-0">3500 руб.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-12 col-md-6">
+          <p class="mb-1">&copy; 2026 Bootstrap Shop. Учебный проект.</p>
+          <p class="mb-0 small">Тел.: +7 (900) 000-00-00, e-mail: info@example.com</p>
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <a class="text-white me-3" href="catalog.html">Каталог</a>
+          <a class="text-white me-3" href="order.html">Заявка</a>
+          <a class="text-white" href="contacts.html">Контакты</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
